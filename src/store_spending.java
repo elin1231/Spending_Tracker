@@ -16,11 +16,13 @@ public class store_spending {
 
     protected void writeFile(){
         try {
-            FileWriter fw = new FileWriter("/Users/ericlin/Desktop/spending_tracker/spending.csv");
-            fw.append("Purpose \n");
-            fw.append("Amount ");
-            fw.append(date.toString());
-            fw.close();
+            FileWriter outputFile = new FileWriter("/Users/ericlin/Desktop/spending_tracker/spending.csv");
+            CSVWriter csvWriter = new CSVWriter(outputFile);
+            
+            outputFile.append("Purpose \n");
+            outputFile.append("Amount ");
+            outputFile.append(date.toString());
+            outputFile.close();
         }catch (Exception e){System.out.println("Error writing file");}
 
 
